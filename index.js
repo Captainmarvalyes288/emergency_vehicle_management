@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.use("/api/", otpRouter);
+app.use("/api", otpRouter);
 app.use("/user", userRoute);
 
 // Start the server

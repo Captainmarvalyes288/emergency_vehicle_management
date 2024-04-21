@@ -3,8 +3,8 @@ const User = require("../models/user");
 const router = require("express").Router();
 
 // Define send-otp and verify-otp routes
-router.post("/api/send-otp", sendOtp);
-router.post("/api/verify-otp", verifyOtp);
+router.post("/send-otp", sendOtp);
+router.post("/verify-otp", verifyOtp);
 
 // Other routes
 router.get("/send-otp", (req, res) => {
