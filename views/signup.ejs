@@ -61,7 +61,7 @@
         .otp-form-container {
           justify-content: center;
           align-items: center;
-          height: 30vh;
+          height: 10vh;
           background-color: #f8f9fa;
         }
       
@@ -138,17 +138,6 @@
       }
       
     </style>
-     <script>
-      function redirectToSendOTP() {
-        // Redirect to the specified URL
-        window.location.href = 'http://localhost:3000/api/send-otp';
-      }
-
-      function redirectToVerifyOTP() {
-        // Redirect to the specified URL
-        window.location.href = 'http://localhost:3000/api/verify-otp';
-      }
-    </script> 
     <%- include('./partials/head') %>
   </head>
   <body>
@@ -244,15 +233,6 @@
           <div class="form-group">
             <div class="form-check">
                 <div class="otp-form-container">
-                  <form action="/submit" method="POST" class="otp-form">
-                    <input type="text" name="otp" placeholder="Enter OTP" required />
-                    <button type="button" class="otp-button" onclick="redirectToSendOTP()">
-                      Send OTP
-                    </button>
-                    <button type="button" class="otp-button" onclick="redirectToVerifyOTP()">
-                      Verify OTP
-                    </button>
-                    <input type="hidden" name="role" value="" />
                     <input
                       class="form-check-input"
                       type="checkbox"

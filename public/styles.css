@@ -75,6 +75,7 @@ header {
   margin-bottom: 20px;
 }
 
+
 .hospital-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid layout */

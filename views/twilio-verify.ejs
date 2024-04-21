@@ -1,65 +1,62 @@
-
 <!-- views/verifyOTP.ejs -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Verify OTP</title>
-</head>
-<style>
+  <head>
+    <title>Verify OTP</title>
+  </head>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-      }
-      
-      h1 {
-        color: #333;
-        text-align: center;
-        margin-top: 80px ;
-        margin-bottom: 50px;
-      }
-      
-      form {
-        width: 300px;
-        margin: 0 auto;
-      }
-      
-      label {
-        display: block;
-        margin: 10px 0;
-      }
-      
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-      }
-      
-      input[type="submit"] {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-</style>
+      font-family: Arial, sans-serif;
+    }
 
-<body>
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 80px;
+      margin-bottom: 50px;
+    }
 
-  <h1>Welcome <%= locals.role %>!</h1>
-  
-  <form action="/api/verify-otp" method="post">
-    <label for="phone">Enter Phone Number:</label><br>
-    <input type="text" id="phone" name="phone"><br>
-    <label for="otp">Enter OTP:</label><br>
-    <input type="text" id="otp" name="otp"><br>
-    <input type="submit" value="Verify">
-  </form>
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
 
-</body>
+    label {
+      display: block;
+      margin: 10px 0;
+    }
 
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <h1>Welcome <%= locals.role %>!</h1>
+
+    <form action="/api/verify-otp" method="post">
+      <label for="phone">Enter Phone Number:</label><br />
+      <input type="text" id="phone" name="phone" /><br />
+      <label for="otp">Enter OTP:</label><br />
+      <input type="text" id="otp" name="otp" /><br />
+      <input type="submit" value="Verify" />
+    </form>
+
+  </body>
 </html>
