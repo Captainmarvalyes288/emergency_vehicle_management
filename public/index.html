@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Vehicle Management System</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emergency Vehicle Management System</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">EMERGENCY VEHICLE MANAGEMENT SYSTEM</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-contact"></i> Contact Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-user"></i> Information
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/api/send-otp"><i class="fas fa-sign-in-alt"></i> Twilio Signin </a></li>
+                      <li><a class="dropdown-item" href="/api/verify-otp"><i class="fas fa-sign-verify-alt"></i> Twilio verifyOTP </a></li>
+                    </ul>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="/user/signup"><i class="fas fa-user-plus"></i> Create Account</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/user/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                  </li>
+                  <form action="/search" method="GET">
+                    <input class="form-control" type="search" name="query" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i> Search</button>
+                  </form>                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+          <div class="album py-5 bg-light">
+            <div class="container">
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/h3.jpeg">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/h2.jpeg">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./images/h1.jpeg">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+               
+        <section id="map">
+            <!-- Google Maps or any other map integration can be added here -->
+        </section>
+        <section id="emergency-details">
+            <h2>Emergency Details</h2><br/>
+            <p id="emergency-info">Loading...</p>
+        </section>
+        <section id="vehicle-list">
+            <h2>  - Available Vehicles</h2><br/>
+            <ul id="vehicle-list-items">
+                <!-- Vehicle information will be populated dynamically -->
+            </ul>
+        </section>
+    </div>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

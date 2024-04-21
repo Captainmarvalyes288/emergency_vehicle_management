@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> LOGIN </title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+      
+      .centered-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .form-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 10px;
+        width: 400px;
+      }
+      
+      .form-row {
+        margin-bottom: 15px;
+      }
+      
+      .input-group {
+        position: relative;
+      }
+      
+      .input-group-prepend {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      
+      .input-group .form-control {
+        padding-left: 30px;
+      }
+      
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+    </style>
+    <%- include('./partials/head') %> 
+  </head>
+  <body>
+    <%- include('./partials/nav') %> 
+
+    <div class="centered-form-container">
+      <div class="form-box">
+        <form id="form-box" action="/user/login" method="post">
+          <div class="form-row">
+            <div class="col-md-14 mb-4">
+              <label for="validationDefaultEmail">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                </div>
+                <input type="email" class="form-control" id="validationDefaultEmail" name="email" placeholder="email" aria-describedby="inputGroupPrepend3" required />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-14 mb-4">
+              <label for="validationDefault04">Password</label>
+              <input type="password" class="form-control" id="validationDefault04" name="password" placeholder="Password" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+
+    <%- include("./partials/script") %> 
+  </body>
+</html>

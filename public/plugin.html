@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Geolocation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="map" style="width:100%; height: 100vh"></div>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+
+    <script>
+
+        var map = L.map('map').setView([28.2380, 83.9956], 11);
+        mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
+
+        var taxiIcon = L.icon({
+            iconUrl: 'img/taxi.png',
+            iconSize: [70, 70]
+        })
+
+        var markers = [];
+        var clickCount = 0;
+
+        map.on('click', function (e) {
+            console.log(e);
+            clickCount++;
+
+            if (clickCount === 1) {
+                // First mouse click: Set initial marker
+                var marker = L.marker([e.latlng.lat, e.latlng.lng], { icon: taxiIcon }).addTo(map);
+                markers.push(marker);
+            } else if (clickCount === 2) {
+                // Second mouse click: Set second marker
+                var marker = L.marker([e.latlng.lat, e.latlng.lng], { icon: taxiIcon }).addTo(map);
+                markers.push(marker);
+
+                // Set routing with waypoints from the first and second markers
+                L.Routing.control({
+                    waypoints: [
+                        markers[0].getLatLng(),
+                        markers[1].getLatLng()
+                    ]
+                }).addTo(map);
+            } else if (clickCount === 3) {
+                // Third mouse click: Clear the map and reset
+                map.eachLayer(function (layer) {
+                    if (layer !== map) {
+                        map.removeLayer(layer);
+                    }
+                });
+                markers = [];
+                clickCount = 0;
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html> 
+
+
