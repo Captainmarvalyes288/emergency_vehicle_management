@@ -31,9 +31,9 @@ const userSchema = new Schema(
       default: "/images/default.png",
     },
     role: {
-      enum: ["admin", "user"],
+      enum: ["User-side", "Hospital-side"],
       type: String,
-      default: "user",
+      default: "User-side",
     },
   },
   {
@@ -58,7 +58,7 @@ userSchema.pre('save', async function (next) {
 
 
 userSchema.static("matchPasswordandGenToken" , async function(email, password) {
-  const user = await this.findOne({ email , phone }).exec();
+  const user = await this.findOne({ email }).exec();
   if (!user) throw new Error('Could not find user');
 
   const salt = user.salt;

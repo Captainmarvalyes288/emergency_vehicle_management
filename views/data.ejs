@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+</head>
+<body>
+    <h1>Hospitals</h1>
+    <% hospitals.forEach(function(hospital) { %>
+        <h2><%= hospital.name %></h2>
+        <p>Address: <%= hospital.address %></p>
+        <p>Phone: <%= hospital.phone %></p>
+    <% }); %>
+
+    <h1>Ambulance Services</h1>
+    <% ambulances.forEach(function(ambulance) { %>
+        <h2><%= ambulance.service_name %></h2>
+        <p>Phone: <%= ambulance.phone %></p>
+    <% }); %>
+
+    <h1>Drug Companies</h1>
+    <% drug_companies.forEach(function(drug_company) { %>
+        <h2><%= drug_company.name %></h2>
+        <p>Address: <%= drug_company.address %></p>
+        <p>Phone: <%= drug_company.phone %></p>
+    <% }); %>
+</body>
+</html>
