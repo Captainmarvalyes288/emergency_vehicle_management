@@ -84,12 +84,13 @@ router.post("/login", async (req, res) => {
   try {
     const token = await User.matchPasswordandGenToken(email, password);
     const user = await User.findOne({ email });
+    // console.log(user);
     if (user) {
-      console.log("User found:", user); // Log the user object
+      console.log("User found:", user.role); // Log the user object
       res.locals.user = user;
       if (user.role === "User-side") {
         return res.cookie("token", token).redirect("data");
-      } else if (user.role === "Hospital-side") {
+      } else {
         return res.cookie("token", token).redirect("map");
       }
     }
@@ -102,9 +103,9 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { Fullname, email, password, phone } = req.body;
+  const { Fullname, email, password, phone, role } = req.body;
   try {
-    const user = await User.create({ Fullname, email, password, phone });
+    const user = await User.create({ Fullname, email, password, phone, role });
     res.locals.user = user;
     return res.redirect("/");
   } catch (error) {

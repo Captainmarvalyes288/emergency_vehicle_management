@@ -248,7 +248,17 @@
                 </div>
             </div>
           </div>
-          
+          <script>
+              var roleDropdown = document.getElementById('verification');
+              var selectedRoleInput = document.getElementById('selectedRole');
+            
+              roleDropdown.addEventListener('change', function() {
+                var selectedRole = roleDropdown.value;
+                selectedRoleInput.value = selectedRole; 
+            
+                console.log('Selected Role:', selectedRole); 
+              });
+          </script>
           <% include("./partials/script") %>
         </body>
       </html>
